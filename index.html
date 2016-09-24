@@ -17,31 +17,54 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script type="text/javascript">
-      //Navbar Scroll Event
-      var lastScrollTop = 0;
-      var navbar        = $('.navbar');
-      $(window).scroll(function(event){
-       var st = $(this).scrollTop();
-       if (st > lastScrollTop){
-           navbar.addClass('navbar-scroll-custom');
-       } else {
-          navbar.removeClass('navbar-scroll-custom');
-       }
-       lastScrollTop = st;
-      });
+    // Hide Header on on scroll down
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 5;
+    var navbarHeight = $('header').outerHeight();
+
+    $(window).scroll(function(event){
+        didScroll = true;
+    });
+
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+    }, 250);
+
+    function hasScrolled() {
+        var st = $(this).scrollTop();
+
+        // Make sure they scroll more than delta
+        if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+
+        // If they scrolled down and are past the navbar, add class .nav-up.
+        // This is necessary so you never see what is "behind" the navbar.
+        if (st > lastScrollTop && st > navbarHeight){
+            // Scroll Down
+            $('header').removeClass('nav-down').addClass('nav-up');
+        } else {
+            // Scroll Up
+            if(st + $(window).height() < $(document).height()) {
+                $('header').removeClass('nav-up').addClass('nav-down');
+            }
+        }
+
+        lastScrollTop = st;
+    }
     </script>
   </head>
 
   <style>
 
   /*Used to Autohide Navbar*/
-  .navbar {
-  	transition-duration: 0.2s;
-  }
-  .navbar-scroll-custom {
-  		transform: translateY(-52px);
-  		transition-duration: 0.6s;
-  }
+header {
+  transition: top 0.2s ease-in-out;
+width: 100%;
+}
 
   /*Parallax Elements*/
   .parallax {
@@ -114,8 +137,7 @@
   }
   </style>
 
-  <body>
-
+  <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -145,6 +167,9 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+  </header>
+
+  <body>
 
     <div class="parallax">
       <div id="group1" class="parallax_group">
