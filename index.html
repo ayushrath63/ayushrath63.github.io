@@ -19,6 +19,17 @@
   </head>
 
   <style>
+
+  /*Used to Autohide Navbar*/
+  .navbar {
+  	transition-duration: 0.2s;
+  }
+  .navbar-scroll-custom {
+  		transform: translateY(-52px);
+  		transition-duration: 0.6s;
+  }
+
+  /*Parallax Elements*/
   .parallax {
     height: 500px; /*fallback*/
     height: 100vh;
@@ -152,5 +163,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+      //Navbar Scroll Event
+      var lastScrollTop = 0;
+      var navbar        = $('.navbar');
+      $(window).scroll(function(event){
+       var st = $(this).scrollTop();
+       if (st > lastScrollTop){
+           navbar.addClass('navbar-scroll-custom');
+       } else {
+          navbar.removeClass('navbar-scroll-custom');
+       }
+       lastScrollTop = st;
+      });
+    </script>
   </body>
 </html>
