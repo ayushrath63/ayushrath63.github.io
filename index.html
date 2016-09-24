@@ -72,15 +72,21 @@
     z-index: 2;
   }
 
-  #group1 {
-    background: rgb(100,100,100)
+  #group1.parallax_layer_back {
+    background-image: url('img/origami.jpg')
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     margin-top: 50px
   }
-  #group2 {
-    background: rgb(100,0,100)
+  #group2.parallax_layer_deep {
+    background-image: url('img/fountain.jpg')
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
-  #group3 {
-    background: rgb(100, 0, 0)
+  #group3.parallax_layer_back {
+    background-image: url('img/ratEating.jpg')
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
   </style>
 
@@ -118,8 +124,8 @@
 
     <div class="parallax">
       <div id="group1" class="parallax_group">
-        <div class="parallax_layer parallax_layer_base">
-          <div class="title">Base Layer</div>
+        <div class="parallax_layer parallax_layer_back">
+          <div class="title">BG Layer</div>
         </div>
       </div>
       <div id="group2" class="parallax_group">
