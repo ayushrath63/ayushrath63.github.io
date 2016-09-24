@@ -73,18 +73,17 @@
   }
 
   #group1 {
-    background: rgb(100,100,100)
+    background: rgb(100,100,100);
   }
   #group2 {
-    background: rgb(100,0,100)
+    background: rgb(100,0,100);
   }
   #group3 {
-    background: rgb(100, 0, 0)
+    background: rgb(100, 0, 0);
   }
-  #deepLayerBG {
-    background-image: url('img/ratEating.jpg')
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+  #bgImg {
+    height: 100%;
+    width: 100%;
   }
   </style>
 
@@ -133,7 +132,8 @@
         <div class="parallax_layer parallax_layer_back">
           <div class="title">Background Layer</div>
         </div>
-        <div class="parallax_layer parallax_layer_deep" id=deepLayerBG>
+        <div class="parallax_layer parallax_layer_deep">
+          <img class="bgImg" src="img/ratEating.jpg" height=""
           <div class="title">Deep Background Layer</div>
         </div>
       </div>
