@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <title>Testing Template</title>
 
     <!-- Bootstrap -->
@@ -20,7 +20,7 @@
 
   <style>
   .parallax {
-    height: 500px; /* fallback for older browsers */
+    height: 500px; /*fallback*/
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
@@ -32,7 +32,7 @@
 
   .parallax_group {
     position: relative;
-    height: 500px; /* fallback for older browsers */
+    height: 500px; /*fallback*/
     height: 100vh;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -48,25 +48,25 @@
     transform-origin-x: 100%;
   }
 
-  .parallax_layer--fore {
+  .parallax_layer_fore {
     -webkit-transform: translateZ(90px) scale(.7);
     transform: translateZ(90px) scale(.7);
     z-index: 1;
   }
 
-  .parallax_layer--base {
+  .parallax_layer_base {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     z-index: 4;
   }
 
-  .parallax_layer--back {
+  .parallax_layer_back {
     -webkit-transform: translateZ(-300px) scale(2);
     transform: translateZ(-300px) scale(2);
     z-index: 3;
   }
 
-  .parallax_layer--deep {
+  .parallax_layer_deep {
     -webkit-transform: translateZ(-600px) scale(3);
     transform: translateZ(-600px) scale(3);
     z-index: 2;
@@ -85,57 +85,63 @@
 
   <body>
 
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Test</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Test</a></li>
+                <li><a href="#">Test</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Default</a></li>
+            <li><a href="../navbar-static-top/">Static top</a></li>
+            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
     <div class="parallax">
       <div id="group1" class="parallax_group">
-        <div class="parallax_layer parallax_layer--base">
+        <div class="parallax_layer parallax_layer_base">
           <div class="title">Base Layer</div>
         </div>
       </div>
       <div id="group2" class="parallax_group">
-        <div class="parallax_layer parallax_layer--base">
+        <div class="parallax_layer parallax_layer_base">
           <div class="title">Base Layer</div>
         </div>
-        <div class="parallax_layer parallax_layer--back">
+        <div class="parallax_layer parallax_layer_back">
           <div class="title">Background Layer</div>
         </div>
-      </div>
-      <div id="group3" class="parallax_group">
-        <div class="parallax_layer parallax_layer--fore">
-          <div class="title">Foreground Layer</div>
-        </div>
-        <div class="parallax_layer parallax_layer--base">
-          <div class="title">Base Layer</div>
-        </div>
-      </div>
-      <div id="group4" class="parallax_group">
-        <div class="parallax_layer parallax_layer--base">
-          <div class="title">Base Layer</div>
-        </div>
-        <div class="parallax_layer parallax_layer--back">
-          <div class="title">Background Layer</div>
-        </div>
-        <div class="parallax_layer parallax_layer--deep">
+        <div class="parallax_layer parallax_layer_deep">
           <div class="title">Deep Background Layer</div>
         </div>
       </div>
-      <div id="group5" class="parallax_group">
-        <div class="parallax_layer parallax_layer--fore">
+      <div id="group3" class="parallax_group">
+        <div class="parallax_layer parallax_layer_fore">
           <div class="title">Foreground Layer</div>
         </div>
-        <div class="parallax_layer parallax_layer--base">
-          <div class="title">Base Layer</div>
-        </div>
-      </div>
-      <div id="group6" class="parallax_group">
-        <div class="parallax_layer parallax_layer--back">
-          <div class="title">Background Layer</div>
-        </div>
-        <div class="parallax_layer parallax_layer--base">
-          <div class="title">Base Layer</div>
-        </div>
-      </div>
-      <div id="group7" class="parallax_group">
-        <div class="parallax_layer parallax_layer--base">
+        <div class="parallax_layer parallax_layer_base">
           <div class="title">Base Layer</div>
         </div>
       </div>
