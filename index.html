@@ -16,15 +16,10 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
   </head>
 
   <style>
-
-  /*Used to Autohide Navbar*/
-header {
-  transition: top 0.2s ease-in-out;
-  width: 100%;
-}
 
   /*Parallax Elements*/
   .parallax {
@@ -105,6 +100,9 @@ header {
     background-repeat: no-repeat;
   }
 
+
+
+  /*temporary*/
   .parallax {
     font-size: 200%;
   }
@@ -148,16 +146,32 @@ header {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
   </header>
 
   <body>
 
     <div class="parallax">
+
       <div id="group1" class="parallax_group">
         <div class="parallax_layer parallax_layer_base ">
-          <div class="title" style="margin-top:50px">Base Layer</div>
+          <div class="title">
+            <div class="container marketing">
+              <div class="row">
+                <div class="col-sm-4">
+                  <img class="img-circle" src="img/ratEating.jpg">
+                  <h2>Picture</h2>
+                  <p>stuff goes here</p>
+                </div>
+                <div class="col-sm-8">
+                  <h1>STUFF</h1>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
       <div id="group2" class="parallax_group">
         <div class="parallax_layer parallax_layer_base">
           <div class="title">Base Layer</div>
@@ -165,20 +179,13 @@ header {
         <div class="parallax_layer parallax_layer_back ">
           <div class="title">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum ornare congue. Nullam sit amet odio commodo, tristique sapien sit amet, malesuada odio. Ut eu ex hendrerit libero finibus laoreet eget eget velit. Vivamus neque mauris, ullamcorper ac egestas vel, suscipit a magna. Maecenas vitae neque nibh. Mauris at mauris vel odio venenatis mattis eu eget enim. Pellentesque vehicula, purus non placerat tincidunt, nunc ligula molestie erat, a congue augue nunc hendrerit tortor. Fusce scelerisque pharetra tellus eget vulputate. Suspendisse ipsum metus, pharetra in lorem eget, congue pellentesque lacus. Pellentesque fringilla leo urna, sit amet tempor nisl commodo a. Donec faucibus lacus at faucibus tristique. Etiam vehicula magna nec tincidunt suscipit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed eu lorem posuere ipsum ultricies aliquet eget a odio.
-
-  Ut feugiat lorem vitae nunc fermentum interdum. Suspendisse potenti. Vestibulum vitae ipsum odio. Curabitur rhoncus, nisi quis vestibulum pulvinar, erat mauris varius leo, vitae fermentum tellus dolor quis mauris. Integer congue, eros ac vulputate rutrum, magna erat ultrices turpis, ut malesuada lectus odio a dolor. Aenean id egestas purus. Aliquam dignissim sit amet enim et posuere. Maecenas eget convallis dolor. In iaculis et arcu a volutpat. Sed arcu eros, mattis id fermentum lacinia, eleifend ut odio. Donec mattis sit amet quam vitae varius. Aenean ac orci eu velit porttitor suscipit. Integer faucibus justo ut libero iaculis, vitae consequat odio varius.
-
-  Donec eu massa luctus, facilisis massa ac, venenatis mauris. Praesent pulvinar rutrum ante pellentesque vestibulum. Quisque pharetra ultricies porta. Nam pharetra ligula ut neque pellentesque, id euismod nisi congue. Maecenas tempor posuere finibus. Nulla mattis euismod eros, non porta mauris gravida a. Fusce diam turpis, cursus id justo et, placerat sodales urna. Donec nec varius ante, eu condimentum turpis. Cras interdum tristique tincidunt. Integer libero eros, pulvinar in tortor ut, placerat consectetur lacus. Etiam elementum volutpat dui non sodales. Nulla non tristique felis, id sodales arcu. In vel nisi vel quam dapibus ornare.
-
-  Nunc non magna eleifend ligula tempus commodo. Proin sed euismod urna. Donec ipsum nulla, consectetur vitae congue vel, elementum quis purus. Vestibulum in finibus eros. Morbi feugiat nibh at dignissim rhoncus. Quisque vestibulum, neque a porta maximus, dolor sem mollis nibh, vel faucibus mauris tellus et ex. Suspendisse vel pharetra erat. Nullam finibus congue hendrerit.
-
-  Donec sollicitudin eleifend turpis sed euismod. Donec commodo, sapien sit amet bibendum tincidunt, nisl diam consectetur velit, nec egestas arcu ipsum a nisl. Etiam ipsum metus, ornare nec consequat non, pulvinar eget sapien. Nunc condimentum bibendum mi a vehicula. Praesent eget odio vitae nibh congue dignissim eget ut diam. Nulla vel metus vitae neque facilisis sagittis. Etiam non suscipit ante. Pellentesque interdum tincidunt nunc, vel ullamcorper odio facilisis sit amet. Mauris efficitur diam odio, a tincidunt urna convallis at. Duis ultricies mollis erat, non bibendum risus pellentesque et.
           </div>
         </div>
         <div class="parallax_layer parallax_layer_deep ">
           <div class="title">Deep Background Layer</div>
         </div>
       </div>
+
       <div id="group3" class="parallax_group">
         <div class="parallax_layer parallax_layer_fore ">
           <div class="title">Foreground Layer</div>
@@ -187,6 +194,7 @@ header {
           <div class="title">Base Layer</div>
         </div>
       </div>
+
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
