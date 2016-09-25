@@ -19,23 +19,7 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-    <script>
-    $(function() {
-      $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: target.offset().top
-            }, 1000);
-            return false;
-          }
-        }
-      });
-    });
-  	</script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
   </head>
 
   <style>
@@ -169,7 +153,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#group1">Page 1</a>
+          <a class="navbar-brand smoothScroll" href="#pg1">Page 1</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -187,6 +171,7 @@
     <div class="parallax">
 
       <div id="group1" class="parallax_group">
+        <a name="pg1"></a>
         <div class="parallax_layer parallax_layer_base">
         </div>
         <div class="parallax_layer parallax_layer_fore">
