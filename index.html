@@ -16,18 +16,21 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <script type="text/javascript">
-      $('#pg1, #pg2, #pg3').on('click', function(e){
-      e.preventDefault();
-      var target= $(this).get(0).id == 'up' ? $('#down') : $('#up');
-        $('html, body').stop().animate({
-           scrollTop: target.offset().top
+    <script>
+    $.fn.scrollView = function () {
+      return this.each(function () {
+        $('html, body').animate({
+          scrollTop: $(this).offset().top
         }, 1000);
       });
+    }
+    $('#group1').scrollView();
+    $('#group2').scrollView();
+    $('#group3').scrollView();
   </script>
   </head>
 
@@ -162,12 +165,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#pg1">Project name</a>
+          <a class="navbar-brand" href="#group1">Page 1</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#pg2">Page 2</a></li>
-            <li><a href="#pg3">Page 3</a></li>
+            <li><a href="#group2">Page 2</a></li>
+            <li><a href="#group3">Page 3</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -180,7 +183,6 @@
     <div class="parallax">
 
       <div id="group1" class="parallax_group">
-        <a name="pg1"></a>
         <div class="parallax_layer parallax_layer_base">
         </div>
         <div class="parallax_layer parallax_layer_fore">
@@ -203,14 +205,12 @@
       </div>
 
       <div id="group2" class="parallax_group">
-        <a name="pg2"></a>
         <div class="parallax_layer parallax_layer_base">
           <div class="title">Base Layer</div>
         </div>
       </div>
 
       <div id="group3" class="parallax_group">
-        <a name="pg3"></a>
         <div class="parallax_layer parallax_layer_fore ">
           <div class="title">Foreground Layer</div>
         </div>
