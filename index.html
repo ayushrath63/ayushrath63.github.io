@@ -79,7 +79,6 @@
   }
   #group1 .parallax_layer_base{
     background-color: rgb(0,80,160);
-    background-repeat: no-repeat;
   }
   #group2 {
     z-index: 3; /* slide under groups 1 and 3 */
@@ -115,6 +114,19 @@
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+  }
+  .chevron {
+  	border-style: solid;
+    border-color: gray;
+  	border-width: 0.15em 0.15em 0 0;
+  	display: inline-block;
+  	height: 0.45em;
+  	left: 0.15em;
+  	position: relative;
+  	top: 0.15em;
+  	transform: rotate(135deg);
+  	vertical-align: bottom;
+  	width: 0.45em;
   }
   </style>
 
@@ -159,7 +171,6 @@
         <div class="parallax_layer parallax_layer_base">
         </div>
         <div class="parallax_layer parallax_layer_fore">
-          <div class="title">
             <div class="container marketing">
               <div class="row">
                 <div class="col-sm-4">
@@ -171,8 +182,10 @@
                   <h1>STUFF</h1>
                 </div>
               </div>
+              <div class="row">
+                <h3><span class="chevron"></span></h3>
+              </div>
             </div>
-          </div>
         </div>
       </div>
 
