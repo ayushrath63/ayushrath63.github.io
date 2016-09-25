@@ -21,17 +21,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <script>
-    $.fn.scrollView = function () {
-      return this.each(function () {
-        $('html, body').animate({
-          scrollTop: $(this).offset().top
-        }, 1000);
+    $(function() {
+      $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
       });
-    }
-    $('#group1').scrollView();
-    $('#group2').scrollView();
-    $('#group3').scrollView();
-  </script>
+    });
+  	</script>
   </head>
 
   <style>
