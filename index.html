@@ -21,6 +21,13 @@
 
   <style>
 
+  /*navbar dropdown hover*/
+  @media (min-width: 979px) {
+    ul.nav li.dropdown:hover > ul.dropdown-menu {
+      display: block;
+    }
+  }
+
   /*Parallax Elements*/
   .parallax {
     height: 500px; /*fallback*/
@@ -143,19 +150,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#pg1">Project name</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#pg2">Page 2</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <a href="#pg3" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#"></a></li>
+                <li><a href="#pg1">Page 1</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
+                <li><a href="#pg2">Page 2</a></li>
               </ul>
             </li>
           </ul>
@@ -170,6 +176,7 @@
     <div class="parallax">
 
       <div id="group1" class="parallax_group">
+        <a name="pg1"></a>
         <div class="parallax_layer parallax_layer_base">
         </div>
         <div class="parallax_layer parallax_layer_fore">
@@ -199,6 +206,7 @@
       </div>
 
       <div id="group3" class="parallax_group">
+        <a name="pg3"></a>
         <div class="parallax_layer parallax_layer_fore ">
           <div class="title">Foreground Layer</div>
         </div>
