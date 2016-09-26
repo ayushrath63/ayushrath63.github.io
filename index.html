@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>ing Template</title>
+    <title>WIP</title>
 
     <!-- Bootstrap -->
-    <!--<link href="css/bootstrap.css" rel="stylesheet">-->
-    <link href="css/parallax.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!--Other CSS-->
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/scrollbar.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,6 +23,8 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Smooth Scroll || Currently Broken-->
     <script src="js/jquery.smooth-scroll.min.js"></script>
     <script>
     $('.smooth').on('click', function() {
@@ -36,39 +41,58 @@
 
   /*Parallax Elements*/
   #group1 {
-    z-index: 5;
-  }
-  #group1 .parallax_layer_base{
-    background-color: 	rgb(72,189,204);
+    min-height: 500px; /*fallback*/
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    -webkit-perspective-origin-x: 100%;
+    perspective-origin-x: 100%;
+    pointer-events: auto;
+    background-color: rgb(72,189,204);
+    box-shadow: inset -10px 0px 10px -9px #000000;
   }
   #group2 {
-    z-index: 3; /* slide under groups 1 and 3 */
-  }
-  #group2 .parallax_layer_base {
-    background-image: url('img/origami.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-  }
-
-  #group3 {
-    z-index: 4; /* slide over group 2 and 4 */
-  }
-  #group3 .parallax_layer_base{
+    min-height: : 500px; /*fallback*/
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    -webkit-perspective-origin-x: 100%;
+    perspective-origin-x: 100%;
     background-image: url('img/fountain.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
+    box-shadow: inset 0px 0px 19px 0px #000000;
+  }
+
+  #group3 {
+    min-height: : 500px; /*fallback*/
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    -webkit-perspective-origin-x: 100%;
+    perspective-origin-x: 100%;
+    background-color: orange;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: inset -10px 0px 10px -9px #000000;
   }
 
   .img-circle {
-    border: 15px solid rgb(255,153,51);
     border-radius: 50%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   }
 
   /*temporary*/
   .parallax {
     font-size: 200%;
   }
-  .title {
+  .centerText {
     text-align: center;
     position: absolute;
     left: 50%;
@@ -76,76 +100,89 @@
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-  .chevron {
-  	border-style: solid;
-    border-color: gray;
-  	border-width: 0.15em 0.15em 0 0;
-  	display: inline-block;
-  	height: 0.45em;
-  	left: 0.15em;
-  	position: relative;
-  	top: 0.15em;
-  	transform: rotate(135deg);
-  	vertical-align: bottom;
-    margin-top: 400px; /*fallback*/
-    margin-top: 85vh;
-  	width: 0.45em;
+  .card
+  {
+    background-color: rgb(153, 0, 51);
+    padding: 40px;
+    box-shadow: 0 3px 10px 0px black;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    z-index: 0;
+  }
+  .card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  .halfsize {
+    -moz-transform:scale(0.5);
+    -webkit-transform:scale(0.5);
+    transform:scale(0.5);
+  }
+  p,h1,h2,h3,h4,h5,h6
+  {
+    color:white
   }
   </style>
 
   <body>
+  <div class="page">
 
-    <div class="parallax">
+    <!--Side Navbar-->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#pg1" onclick="closeNav()">Page 1</a>
+      <a href="#pg2" onclick="closeNav()">page 2</a>
+      <a href="#pg3" onclick="closeNav()">page 3</a>
+    </div>
 
-      <div id="group1" class="parallax_group">
-        <a id="pg1" class="smooth"></a>
-        <div class="parallax_layer parallax_layer_base">
-          <div class="title">
-            <span class="chevron"></span>
-          </div>
-        </div>
-        <div class="parallax_layer parallax_layer_fore">
-          <div class="title">
-            <div class="container marketing">
-              <div class="row">
-                <div class="col-sm-4">
-                  <img class="img-circle" src="img/tick64.png">
-                  <h2>Picture</h2>
-                  <p>stuff goes here</p>
-                </div>
-                <div class="col-sm-8">
-                  <p>
-                    <a href="#pg2">Page 2</a>
-                    <br>
-                    <a href="#pg3">Page 3</a>
-                  </p>
-                </div>
-              </div>
+    <span class="navMenu" onclick="openNav()"><div class="menuText">&#9776;</div></span>
+
+    <a id="pg1" class="smooth"></a>
+    <div id="group1">
+      <div class="centerText">
+        <div class="container marketing card">
+          <div class="row">
+            <div class="col-sm-4">
+              <img class="img-circle" src="img/head.jpg" width="50%" height="50%">
+              <h2>Picture</h2>
+              <p>stuff goes here</p>
+            </div>
+            <div class="col-sm-8">
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
             </div>
           </div>
         </div>
       </div>
-
-      <div id="group2" class="parallax_group">
-        <a id="pg2" class="smooth"></a>
-        <div class="parallax_layer parallax_layer_base">
-          <div class="title">Base Layer</div>
-        </div>
-      </div>
-
-      <div id="group3" class="parallax_group">
-        <a id="pg3" class="smooth"></a>
-        <div class="parallax_layer parallax_layer_fore ">
-          <div class="title"><a href="#pg1">Top</a></div>
-        </div>
-        <div class="parallax_layer parallax_layer_base ">
-          <div class="title">Base Layer</div>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Include all compiled plugins (below), or include individual files as needed --
-    <script src="js/bootstrap.js"></script>-->
+    <a id="pg2" class="smooth"></a>
+    <div id="group2">
+        <div class="centerText">Base Layer</div><a id="pg2" class="smooth"></a>
+    </div>
+
+    <a id="pg3" class="smooth"></a>
+    <div id="group3">
+      <div class="centerText">
+        <div class="container marketing card">
+            <p>Base Layer</p>
+          </div>
+      </div>
+    </div>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+  </div>
+
+    <!--Opens and closes navbar-->
+    <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "20%";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
   </body>
 </html>
