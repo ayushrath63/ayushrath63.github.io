@@ -136,8 +136,8 @@
   	top: 0.15em;
   	transform: rotate(135deg);
   	vertical-align: bottom;
-    margin-top: 100px; /*fallback*/
-    margin-top: 15vh;
+    margin-top: 400px; /*fallback*/
+    margin-top: 85vh;
   	width: 0.45em;
   }
   </style>
@@ -163,7 +163,11 @@
                   <p>stuff goes here</p>
                 </div>
                 <div class="col-sm-8">
-                  <h1>STUFF &#xf103;</h1>
+                  <p>
+                    <a href="#pg2" class="smoothScroll">Page 2</a>
+                    <br>
+                    <a href="#pg3" class="smoothScroll">Page 3</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -172,17 +176,19 @@
       </div>
 
       <div id="group2" class="parallax_group">
+        <a name="pg2"></a>
         <div class="parallax_layer parallax_layer_base">
           <div class="title">Base Layer</div>
         </div>
       </div>
 
       <div id="group3" class="parallax_group">
-        <!--<div class="parallax_layer parallax_layer_fore ">
-          <div class="title">Foreground Layer</div>
-        </div>-->
+        <a name="pg3"></a>
+        <div class="parallax_layer parallax_layer_fore ">
+          <div class="title"><a href="#pg1" class="smoothScroll">Top</a></div>
+        </div>
         <div class="parallax_layer parallax_layer_base ">
-          <div class="title"><a href="#pg1" class="smoothScroll">Page 2</a></div>
+          <div class="title">Base Layer</div>
         </div>
       </div>
 
