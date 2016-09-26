@@ -20,6 +20,17 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/jquery.smooth-scroll.min.js"></script>
+    <script>
+$('.smooth').on('click', function() {
+    $.smoothScroll({
+        scrollElement: $('body'),
+        scrollTarget: '#' + this.id
+    });
+
+    return false;
+});
+</script>
   </head>
 
   <style>
@@ -105,9 +116,9 @@
                 </div>
                 <div class="col-sm-8">
                   <p>
-                    <a href="#pg2" class="smoothScroll">Page 2</a>
+                    <a href="#pg2">Page 2</a>
                     <br>
-                    <a href="#pg3" class="smoothScroll">Page 3</a>
+                    <a href="#pg3">Page 3</a>
                   </p>
                 </div>
               </div>
@@ -126,7 +137,7 @@
       <div id="group3" class="parallax_group">
         <a id="pg3" class="smooth"></a>
         <div class="parallax_layer parallax_layer_fore ">
-          <div class="title"><a href="#pg1" class="smoothScroll">Top</a></div>
+          <div class="title"><a href="#pg1">Top</a></div>
         </div>
         <div class="parallax_layer parallax_layer_base ">
           <div class="title">Base Layer</div>
